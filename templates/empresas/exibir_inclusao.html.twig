@@ -33,31 +33,19 @@
                     <th>Porte</th>
                     <th>Ente Federativo Responsável</th>
                 </thead>
-                {#<tbody>
-                    @foreach($empresas as $linha)
-                        <tr>
-                            <td>{{$linha->id}}</td>
-                            <td>{{$linha->cnpj_basico}}</td>
-                            <td>{{$linha->razao_social}}</td>
-                            <td>{{$linha->natureza_juridica}}</td>
-                            <td>{{$linha->qualificacao}}</td>
-                            <td>{{$linha->capital_social}}</td>
-                            <td>{{$linha->porte}}</td>
-                            <td>{{$linha->ente_federativo_responsavel}}</td>
-                        </tr>
-                    @endforeach
-                </tbody> #}
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>411232</td>
-                        <td>Empresa Exemplo</td>
-                        <td>Sociedade Limitada</td>
-                        <td>Ativa</td>
-                        <td>100000</td>
-                        <td>Microempresa</td>
-                        <td>Prefeitura Municipal</td>
-                    </tr>
+                    {% for linha in empresas %}
+                        <tr>
+                            <td>{{linha.id}}</td>
+                            <td>{{linha.cnpjBasico}}</td>
+                            <td>{{linha.razaoSocial}}</td>
+                            <td>{{linha.naturezaJuridica}}</td>
+                            <td>{{linha.qualificacao}}</td>
+                            <td>{{linha.capitalSocial}}</td>
+                            <td>{{linha.porte}}</td>
+                            <td>{{linha.enteFederativoResponsavel}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
